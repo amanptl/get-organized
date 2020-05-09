@@ -6,10 +6,12 @@ import json
 import time
 import argparse
 
+# Handler that will detect new files.
 class MyHandler(FileSystemEventHandler):
     def on_created(self, event):
         org()
 
+# Organizes by detecting the file types from the file name
 def org():
     for file in os.listdir(folder_to_track):
         if os.path.isfile(os.path.join(folder_to_track, file)):
@@ -19,7 +21,8 @@ def org():
                     dest = folder_to_track + folders[types]
                     print(file, dest)
                     move_file(src, dest, file)
-    
+
+# Moves the file and creates the sub-directory if it doesn't exist
 def move_file(src,dest,file):
     print("Moving file " + file + " to " + dest)
     if not os.path.exists(dest):
@@ -31,6 +34,7 @@ def move_file(src,dest,file):
     else:
         print("Moved " + file)
 
+# Creates the sub-direcotry
 def create_dir(dir):
     try:
         os.mkdir(dir)
@@ -39,6 +43,7 @@ def create_dir(dir):
     else:
         print ("Successfully created the "+ dir + " directory")
 
+# Dictionary of file types based on file extension
 generalize = {
     'img' : ('.jpeg', '.jpg', '.png', '.jpg', '.gif', '.raw'),
     'pdf' : ('.pdf'),
@@ -59,7 +64,6 @@ parser = argparse.ArgumentParser(usage="python organize.py <your_directory>")
 parser.add_argument('dir', type=str)
 args = parser.parse_args()
 folder_to_track = args.dir
-#folder_to_track = 'C:/Users/Aman/Desktop/Test/'
 print("Organizing")
 org()
 print("Organizing Complete")
