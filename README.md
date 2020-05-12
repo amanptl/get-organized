@@ -6,5 +6,5 @@ Developed a directory organizer because I was feeling lazy :grimacing: sorting o
 
 ## Usage
 ```bash
-- Usage: python organize.py <directory_to_organize>
+python organize.py <directory_to_organize>
 ```
