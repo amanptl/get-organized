@@ -6,7 +6,7 @@ Developed a directory organizer because I was feeling lazy :grimacing: sorting o
 
 ## Usage
 ```bash
-git clone https://github.com/amanptl/Directory-Organizer
-cd Directory-Organizer
+git clone https://github.com/amanptl/directory-organizer
+cd directory-organizer
 python organize.py <directory_to_organize>
 ```
