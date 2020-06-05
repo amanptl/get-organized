@@ -1,4 +1,4 @@
-# Directory Organizer
+# Get Organized!
 
 ## organize.py
 Developed a directory organizer because I was feeling lazy :grimacing: sorting out my Downloads folder's files according to their file types. 
